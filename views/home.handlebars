@@ -1,1 +1,36 @@
-<h1>Welcome Home</h1>
+<h1>Welcome to the Pet Store</h1>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Adopted</th>
+            <th>Adopt Pet</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each pets}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.age}}</td>
+            <td>{{this.adopted}}</td>
+            <td><button class="btn btn-success adopt-pet" data-id={{this.id}}>Adopt This Pet</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<form id="pet-form">
+  <div class="form-group">
+    <label for="pet-name">Pet Name:</label>
+    <input type="text" class="form-control" id="pet-name" required>
+  </div>
+  <div class="form-group">
+    <label for="pet-age">Pet Age:</label>
+    <input type="number" class="form-control" id="pet-age" min="1" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
